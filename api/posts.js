@@ -118,32 +118,32 @@ postsRouter.get('/', async (req, res) => {
   }
 });
 
-const posts = allPosts.filter(post => {
-  // the post is active, doesn't matter who it belongs to
-  if (post.active) {
-    return true;
-  }
+// const posts = allPosts.filter(post => {
+//   // the post is active, doesn't matter who it belongs to
+//   if (post.active) {
+//     return true;
+//   }
 
-  // the post is not active, but it belogs to the current user
-  if (req.user && post.author.id === req.user.id) {
-    return true;
-  }
+//   // the post is not active, but it belogs to the current user
+//   if (req.user && post.author.id === req.user.id) {
+//     return true;
+//   }
 
-  // none of the above are true
-  return false;
-});
+//   // none of the above are true
+//   return false;
+// });
 
-if (someConditional) {
-  return true;
-} else {
-  return false;
-}
+// if (someConditional) {
+//   return true;
+// } else {
+//   return false;
+// }
 
-const posts = allPosts.filter(post => {
-  return post.active || (req.user && post.author.id === req.user.id);
-});
-// is the same as:
+// const posts = allPosts.filter(post => {
+//   return post.active || (req.user && post.author.id === req.user.id);
+// });
+// // is the same as:
 
-return someConditional;
+// return someConditional;
 
 module.exports = postsRouter;
