@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const apiRouter = require('./api');
+
 
 const PORT = 3000;
 const express = require('express');
@@ -17,7 +19,6 @@ server.use(bodyParser.json());
 const morgan = require('morgan');
 server.use(morgan('dev'));
 
-const apiRouter = require('./api');
 server.use('/api', apiRouter);
 
 
